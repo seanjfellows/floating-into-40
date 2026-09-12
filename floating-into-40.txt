@@ -23,7 +23,6 @@ Buttons
 		icon:https://seanjfellows.github.io/floating-into-40/images/float.png
 		no text
 		class:bigButton hasFlares
-		icon class:shadowed
 		tooltip origin:bottom
 
 Resources
