@@ -20,7 +20,7 @@ Buttons
 		desc:Click to get another inner tube.
 		on click:anim icon wobble
 		on click:yield 1 tube
-		icon:stuff/bunny.png
+		icon:images/float.png
 		no text
 		class:bigButton hasFlares
 		icon class:shadowed
