@@ -1,0 +1,60 @@
+Let's make a game!
+	name:Floating into 40
+	by:Sean Fellows
+	desc:A tiny test version of Floating into 40. Float around, collect tubes, and see how far this can go.
+	version:1
+
+Settings
+	background:stuff/meadow.jpg
+	building cost increase:115%
+	building cost refund:50%
+	spritesheet:icons, 48 by 48, stuff/bunnyIcons.png
+	stylesheet:stuff/bigBlue.css
+
+Layout
+	use default
+
+Buttons
+	*floatButton
+		name:FLOAT
+		desc:Click to get another inner tube.
+		on click:anim icon wobble
+		on click:yield 1 tube
+		icon:stuff/bunny.png
+		no text
+		class:bigButton hasFlares
+		icon class:shadowed
+		tooltip origin:bottom
+
+Resources
+	*tube|tubes
+		name:Tube|Tubes
+		desc:Your collection of inner tubes. You need tubes to buy things around the lazy river.
+		icon:icons[0,0]
+		class:noBackground
+		show earned
+
+Buildings
+	*poolEntrance|poolEntrances
+		name:Pool Entrance|Pool Entrances
+		desc:More people enter the lazy river, creating more opportunities to acquire tubes.
+		icon:icons[3,0]
+		cost:15 tubes
+		on tick:yield 0.1 tube
+		unlocked
+
+Upgrades
+	*firstDrink
+		name:First Drink
+		desc:Someone hands you a drink. Somehow this makes floating more productive.<//><b>Effect:</b><.>FLOAT yield +1
+		icon:icons[1,1]
+		cost:100 tubes
+		passive:increase tube yield of floatButton by 1
+		req:50 tubes:earned
+
+Achievements
+	*firstTube
+		name:Getting In
+		desc:Acquire your first tube.
+		req:1 tube
+		icon:icons[2,4] icons[0,2]
