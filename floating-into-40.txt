@@ -1,14 +1,14 @@
 Let's make a game!
 	name:Floating into 40
 	by:Sean Fellows
-	desc:A tiny birthday game about floating, drinking, gambling, and other excellent uses of time.
+	desc:Float around the MGM Grand, collect tubes, enjoy some drinks, and see where the day takes you.
 	version:1
 
 Settings
-	background:stuff/meadow.jpg
+	background:https://seanjfellows.github.io/floating-into-40/images/background.png
 	building cost increase:115%
 	building cost refund:50%
-	spritesheet:icons, 48 by 48, stuff/bunnyIcons.png
+	spritesheet:icons, 48 by 48, https://seanjfellows.github.io/floating-into-40/images/icons.png
 	stylesheet:stuff/bigBlue.css
 
 Layout
@@ -20,7 +20,7 @@ Buttons
 		desc:Click to get another inner tube.
 		on click:anim icon wobble
 		on click:yield 1 tube
-		icon:https://seanjfellows.github.io/floating-into-40/images/float.png
+		icon:https://seanjfellows.github.io/floating-into-40/images/float.jpg
 		no text
 		class:bigButton hasFlares
 		tooltip origin:bottom
@@ -36,7 +36,7 @@ Resources
 	*drink|drinks
 		name:Drink|Drinks
 		desc:Cold beverages acquired without ever having to leave the lazy river.
-		icon:icons[0,1]
+		icon:icons[1,0]
 		class:noBackground
 		hidden when 0
 
@@ -44,7 +44,7 @@ Buildings
 	*poolEntrance|poolEntrances
 		name:Pool Entrance|Pool Entrances
 		desc:The gateway to a relaxing day on the lazy river.<//><b>Effect:</b><.>Produces 0.1 tubes per second.
-		icon:icons[3,0]
+		icon:icons[2,0]
 		cost:15 tubes
 		on tick:yield 0.1 tube
 		unlocked
@@ -52,7 +52,7 @@ Buildings
 	*innerTubeRack|innerTubeRacks
 		name:Inner Tube Rack|Inner Tube Racks
 		desc:A suspiciously large collection of inflatable flotation devices.<//><b>Effect:</b><.>Produces 0.5 tubes per second.
-		icon:icons[3,1]
+		icon:icons[0,1]
 		cost:100 tubes
 		on tick:yield 0.5 tube
 		req:100 tubes:earned
@@ -60,15 +60,15 @@ Buildings
 	*cabana|cabanas
 		name:Cabana|Cabanas
 		desc:A shady place to sit down, relax, and absolutely not leave the lazy river.<//><b>Effect:</b><.>Produces 2 tubes per second.
-		icon:icons[3,2]
+		icon:icons[1,1]
 		cost:600 tubes
-		on tick:yield 2 tubes
+		on tick:yield 2 tube
 		req:600 tubes:earned
 
 	*poolsideServer|poolsideServers
 		name:Poolside Server|Poolside Servers
 		desc:Someone brings you a drink without requiring you to get out of your tube.<//><b>Effect:</b><.>Produces 5 tubes per second and 0.1 drinks per second.
-		icon:icons[3,3]
+		icon:icons[2,1]
 		cost:4000 tubes
 		on tick:yield 5 tubes
 		on tick:yield 0.1 drink
@@ -78,7 +78,7 @@ Upgrades
 	*poolsideDrinks
 		name:Poolside Drinks
 		desc:Drinking makes floating more productive. This is science.<//><b>Effect:</b><.>FLOAT yield +1 tube.
-		icon:icons[1,1]
+		icon:icons[0,2]
 		cost:100 tubes
 		passive:increase tube yield of floatButton by 1
 		req:50 tubes:earned
@@ -94,7 +94,7 @@ Upgrades
 	*poolsideRefill
 		name:Poolside Refill
 		desc:You've discovered the ancient art of getting another drink without getting out of the tube.<//><b>Effect:</b><.>Poolside Servers produce twice as many drinks.
-		icon:icons[1,3]
+		icon:icons[2,2]
 		cost:2000 tubes
 		passive:multiply yield of poolsideServer by 2
 		req:1 poolsideServer
@@ -104,28 +104,28 @@ Achievements
 		name:Getting In
 		desc:Acquire your first tube.
 		req:1 tube
-		icon:icons[2,4] icons[0,2]
+		icon:icons[0,0] icons[2,0]
 
 	*floatOn
 		name:Float On
 		desc:Acquire 100 tubes.
 		req:100 tubes
-		icon:icons[2,4] icons[0,3]
+		icon:icons[0,0] icons[0,1]
 
 	*noPlans
 		name:No Plans Today
 		desc:Own a Pool Entrance.
 		req:1 poolEntrance
-		icon:icons[2,4] icons[0,4]
+		icon:icons[2,0] icons[0,1]
 
 	*thisIsRelaxing
 		name:This Is Relaxing
 		desc:Own an Inner Tube Rack.
 		req:1 innerTubeRack
-		icon:icons[2,4] icons[0,5]
+		icon:icons[0,1] icons[1,1]
 
 	*hydrated
 		name:Hydrated
 		desc:Acquire your first drink.
 		req:1 drink
-		icon:icons[2,4] icons[0,6]
+		icon:icons[1,0] icons[1,2]
