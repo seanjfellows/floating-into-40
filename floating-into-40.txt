@@ -8,7 +8,7 @@ Settings
 	background:https://seanjfellows.github.io/floating-into-40/images/background.png
 	building cost increase:115%
 	building cost refund:50%
-	spritesheet:icons, 48 by 48, https://seanjfellows.github.io/floating-into-40/images/icons.png
+	spritesheet:icons, 48 by 48, https://orteil.dashnet.org/igm/stuff/bunnyIcons.png
 	stylesheet:stuff/bigBlue.css
 
 Layout
